@@ -1,0 +1,139 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sdm_lab: <http://sdm_lab/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+sdm_lab:Author a rdfs:Class ;
+    rdfs:label "Author" .
+
+sdm_lab:Keyword a rdfs:Class ;
+    rdfs:label "Keyword" .
+
+sdm_lab:Paper a rdfs:Class ;
+    rdfs:label "Paper" .
+
+sdm_lab:Proceeding a rdfs:Class ;
+    rdfs:label "Proceeding" .
+
+sdm_lab:Responsible a rdfs:Class ;
+    rdfs:label "Responsible" .
+
+sdm_lab:Review a rdfs:Class ;
+    rdfs:label "Review" .
+
+sdm_lab:Venue a rdfs:Class ;
+    rdfs:label "Venue" .
+
+sdm_lab:Volume a rdfs:Class ;
+    rdfs:label "Volume" .
+
+sdm_lab:DemoPaper rdfs:label "DemoPaper" ;
+    rdfs:subClassOf sdm_lab:Paper .
+
+sdm_lab:ExpertGroup rdfs:label "ExpertGroup" ;
+    rdfs:subClassOf sdm_lab:Conference .
+
+sdm_lab:FullPaper rdfs:label "FullPaper" ;
+    rdfs:subClassOf sdm_lab:Paper .
+
+sdm_lab:Poster rdfs:label "Poster" ;
+    rdfs:subClassOf sdm_lab:Paper .
+
+sdm_lab:RegularConference rdfs:label "Workshop" ;
+    rdfs:subClassOf sdm_lab:Conference .
+
+sdm_lab:ShortPaper rdfs:label "ShortPaper" ;
+    rdfs:subClassOf sdm_lab:Paper .
+
+sdm_lab:Symposium rdfs:label "Symposium" ;
+    rdfs:subClassOf sdm_lab:Conference .
+
+sdm_lab:Workshop rdfs:label "Workshop" ;
+    rdfs:subClassOf sdm_lab:Conference .
+
+sdm_lab:assigns rdfs:label "assigns" ;
+    rdfs:domain sdm_lab:Responsible ;
+    rdfs:range sdm_lab:Reviewer .
+
+sdm_lab:cHandledBy rdfs:label "cHandledBy" ;
+    rdfs:domain sdm_lab:Conference ;
+    rdfs:range sdm_lab:Chair .
+
+sdm_lab:cRelatedTo rdfs:label "cRelatedTo" ;
+    rdfs:domain sdm_lab:Conference ;
+    rdfs:range sdm_lab:Keyword .
+
+sdm_lab:contains rdfs:label "contains" ;
+    rdfs:domain sdm_lab:Journal ;
+    rdfs:range sdm_lab:Volume .
+
+sdm_lab:has rdfs:label "has" ;
+    rdfs:domain sdm_lab:Conference ;
+    rdfs:range sdm_lab:Proceeding .
+
+sdm_lab:isSubmittedTo rdfs:label "isSubmittedTo" ;
+    rdfs:domain sdm_lab:Paper ;
+    rdfs:range sdm_lab:Venue .
+
+sdm_lab:isUnderReview rdfs:label "isUnderReview" ;
+    rdfs:domain sdm_lab:Paper ;
+    rdfs:range sdm_lab:Review .
+
+sdm_lab:jHandledBy rdfs:label "jHandledBy" ;
+    rdfs:domain sdm_lab:Journal ;
+    rdfs:range sdm_lab:Editor .
+
+sdm_lab:jRelatedTo rdfs:label "jRelatedTo" ;
+    rdfs:domain sdm_lab:Journal ;
+    rdfs:range sdm_lab:Keyword .
+
+sdm_lab:name rdfs:label "name" ;
+    rdfs:domain sdm_lab:Author ;
+    rdfs:range xsd:string .
+
+sdm_lab:pRelatedTo rdfs:label "pRelatedTo" ;
+    rdfs:domain sdm_lab:Paper ;
+    rdfs:range sdm_lab:Keyword .
+
+sdm_lab:performs rdfs:label "performs" ;
+    rdfs:domain sdm_lab:Reviewer ;
+    rdfs:range sdm_lab:Review .
+
+sdm_lab:reviewDecision rdfs:label "reviewDecison" ;
+    rdfs:domain sdm_lab:Review ;
+    rdfs:range xsd:string .
+
+sdm_lab:reviewText rdfs:label "reviewText" ;
+    rdfs:domain sdm_lab:Review ;
+    rdfs:range xsd:string .
+
+sdm_lab:title rdfs:label "title" ;
+    rdfs:domain sdm_lab:Paper ;
+    rdfs:range xsd:string .
+
+sdm_lab:word rdfs:label "word" ;
+    rdfs:domain sdm_lab:Keyword ;
+    rdfs:range xsd:string .
+
+sdm_lab:writes rdfs:label "writes" ;
+    rdfs:domain sdm_lab:Author ;
+    rdfs:range sdm_lab:Paper .
+
+sdm_lab:year rdfs:label "year" ;
+    rdfs:domain sdm_lab:Paper ;
+    rdfs:range xsd:integer .
+
+sdm_lab:Chair rdfs:label "Chair" ;
+    rdfs:subClassOf sdm_lab:Responsible .
+
+sdm_lab:Editor rdfs:label "Editor" ;
+    rdfs:subClassOf sdm_lab:Responsible .
+
+sdm_lab:Reviewer rdfs:label "Reviewer" ;
+    rdfs:subClassOf sdm_lab:Author .
+
+sdm_lab:Journal rdfs:label "Journal" ;
+    rdfs:subClassOf sdm_lab:Venue .
+
+sdm_lab:Conference rdfs:label "Conference" ;
+    rdfs:subClassOf sdm_lab:Venue .
+
